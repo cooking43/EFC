@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the EFC paper and the Gewu platform."
+title: "EFC: Robust Humanoid Control on Dynamic Maritime Platforms via Explicit Feedforward"
+type: software
+authors:
+  - family-names: Xie
+    given-names: Daoshun
+  - family-names: Yang
+    given-names: Shenhua
+  - family-names: Wang
+    given-names: Weijun
+  - family-names: Chen
+    given-names: Guoquan
+version: 0.1.0
+date-released: 2026-09-08
+license: Apache-2.0
+repository-code: "https://github.com/cooking43/EFC"
+preferred-citation:
+  type: article
+  title: "EFC: Robust Humanoid Control on Dynamic Maritime Platforms via Explicit Feedforward"
+  authors:
+    - family-names: Xie
+      given-names: Daoshun
+    - family-names: Yang
+      given-names: Shenhua
+    - family-names: Wang
+      given-names: Weijun
+    - family-names: Chen
+      given-names: Guoquan
+  year: 2026

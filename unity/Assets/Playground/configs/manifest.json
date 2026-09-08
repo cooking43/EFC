@@ -1,0 +1,84 @@
+{
+  "main_experiments": [
+    {
+      "name": "static_baseline",
+      "trainer": "trainers/static_baseline.yaml",
+      "experiment": "experiments/static_baseline.json",
+      "notes": "Static platform baseline (33-dim obs)"
+    },
+    {
+      "name": "dynamic_baseline",
+      "trainer": "trainers/dynamic_baseline.yaml",
+      "experiment": "experiments/dynamic_baseline.json",
+      "notes": "Dynamic platform, pure feedback (33-dim obs)"
+    },
+    {
+      "name": "dynamic_priors",
+      "trainer": "trainers/dynamic_priors.yaml",
+      "experiment": "experiments/dynamic_priors.json",
+      "notes": "Physical priors: CoM only (38-dim obs)"
+    },
+    {
+      "name": "dynamic_implicit",
+      "trainer": "trainers/dynamic_implicit.yaml",
+      "experiment": "experiments/dynamic_implicit.json",
+      "notes": "Implicit prediction: CoM+Pred obs, no FF (57-dim obs)"
+    },
+    {
+      "name": "dynamic_lstm",
+      "trainer": "trainers/dynamic_lstm.yaml",
+      "experiment": "experiments/dynamic_lstm.json",
+      "notes": "Recurrent baseline: CoM+LSTM (38-dim + memory)"
+    },
+    {
+      "name": "proposed",
+      "trainer": "trainers/proposed.yaml",
+      "experiment": "experiments/proposed.json",
+      "notes": "Proposed method: CoM+FF, feedforward injection vs observation extension (38-dim obs)"
+    }
+  ],
+  "ablations": [
+    {
+      "name": "predictor_fdema",
+      "trainer": "trainers/predictor_fdema.yaml",
+      "experiment": "experiments/predictor_fdema.json",
+      "notes": "Ablation: FD+EMA predictor (2nd-order)"
+    },
+    {
+      "name": "predictor_first_order",
+      "trainer": "trainers/predictor_first_order.yaml",
+      "experiment": "experiments/predictor_first_order.json",
+      "notes": "Ablation: First-order Taylor predictor (order=1)"
+    },
+    {
+      "name": "predictor_oracle",
+      "trainer": "trainers/predictor_oracle.yaml",
+      "experiment": "experiments/predictor_oracle.json",
+      "notes": "Ablation: Oracle predictor (analytical)"
+    },
+    {
+      "name": "horizon_50ms",
+      "trainer": "trainers/horizon_50ms.yaml",
+      "experiment": "experiments/horizon_50ms.json",
+      "notes": "Ablation: h=50ms prediction horizon"
+    },
+    {
+      "name": "horizon_200ms",
+      "trainer": "trainers/horizon_200ms.yaml",
+      "experiment": "experiments/horizon_200ms.json",
+      "notes": "Ablation: h=200ms prediction horizon"
+    },
+    {
+      "name": "channel_knee_ankle",
+      "trainer": "trainers/channel_knee_ankle.yaml",
+      "experiment": "experiments/channel_knee_ankle.json",
+      "notes": "Ablation: Knee+Ankle roll compensation"
+    },
+    {
+      "name": "channel_knee_ankle_hip",
+      "trainer": "trainers/channel_knee_ankle_hip.yaml",
+      "experiment": "experiments/channel_knee_ankle_hip.json",
+      "notes": "Ablation: Knee+Ankle+Hip roll compensation"
+    }
+  ]
+}

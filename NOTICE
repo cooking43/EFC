@@ -1,0 +1,13 @@
+EFC: Robust Humanoid Control on Dynamic Maritime Platforms via Explicit Feedforward
+Copyright 2026 Daoshun Xie, Shenhua Yang, Weijun Wang, and Guoquan Chen
+
+This distribution includes a modified RobotRLAgent.cs and interoperating code
+derived from or designed for Gewu / Unity RL Playground:
+
+  https://github.com/loongOpen/Unity-RL-Playground
+
+The upstream project is distributed under the Apache License 2.0. Its authors
+and institutional contributors retain their respective rights. Downloaded
+robot models, meshes, textures, scenes, Unity packages, datasets, and trained
+weights are not distributed in this repository and may have separate license
+terms.

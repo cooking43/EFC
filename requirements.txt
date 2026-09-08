@@ -1,0 +1,8 @@
+# Training interface (install the appropriate PyTorch build for your CPU/CUDA first)
+mlagents==1.1.0
+
+# Result extraction and plotting
+numpy
+pandas
+matplotlib
+tensorboard

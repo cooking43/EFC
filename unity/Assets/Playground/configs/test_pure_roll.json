@@ -1,0 +1,47 @@
+{
+  "feedforward": {
+    "K_roll": 0.1,
+    "K_pitch": 0.1,
+    "max_roll_comp": 8.0,
+    "max_pitch_comp": 8.0,
+    "support_threshold": 0.7,
+    "filter_alpha": 0.3,
+    "prediction_horizon": 0.1,
+    "predictor_order": 2
+  },
+  "platform": {
+    "rollAmplitude": 5.0,
+    "rollFrequency": 0.2,
+    "rollPhase": 0.0,
+    "pitchAmplitude": 0.0,
+    "pitchFrequency": 0.2,
+    "pitchPhase": 0.0,
+    "heaveAmplitude": 0.0,
+    "heaveFrequency": 0.1,
+    "heavePhase": 0.0,
+    "enableMotion": true,
+    "useCurriculumLearning": false
+  },
+  "domainRandomization": {
+    "enableMassRandomization": false,
+    "massMultiplierMin": 0.9,
+    "massMultiplierMax": 1.1,
+    "enableCoMRandomization": false,
+    "comOffsetRange": 0.05,
+    "enableFrictionRandomization": false,
+    "frictionMin": 0.4,
+    "frictionMax": 1.0,
+    "enableExternalForce": false,
+    "forceMin": 0.0,
+    "forceMax": 50.0,
+    "forceIntervalMin": 2.0,
+    "forceIntervalMax": 5.0,
+    "forceDuration": 0.1
+  },
+  "meta": {
+    "experimentName": "test_pure_roll",
+    "configVersion": "1.0",
+    "notes": "测试配置：纯横摇（roll=5°, pitch=0），论文声称配置",
+    "timestamp": ""
+  }
+}

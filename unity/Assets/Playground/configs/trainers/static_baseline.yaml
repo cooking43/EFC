@@ -1,0 +1,39 @@
+# AC3: static_baseline - 验证基础行走能力（静止地面，0° roll，33维baseline观测）
+# 目的：确认 P0 后的改动（真实质心、接触力、JONSWAP、IMU预测器）未破坏平地行走
+# 判据：episode 长度从 ~78 步上升至 ~1000 步；reward 由负转正
+behaviors:
+  gewu:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 2048
+      buffer_size: 20480
+      learning_rate: 0.0003
+      learning_rate_schedule: linear
+      beta: 0.005
+      beta_schedule: linear
+      epsilon: 0.2
+      epsilon_schedule: linear
+      lambd: 0.95
+      num_epoch: 3
+    network_settings:
+      normalize: true
+      hidden_units: 512
+      num_layers: 3
+      vis_encode_type: simple
+    reward_signals:
+      extrinsic:
+        gamma: 0.995
+        strength: 1.0
+    max_steps: 20000000   # AC3: 2e7 步正式实验
+    time_horizon: 1000
+    summary_freq: 1000
+    keep_checkpoints: 5
+    checkpoint_interval: 500000   # 每 50 万步存档
+    threaded: false
+
+# AE1: environment_parameters 统一控制所有运行时配置
+environment_parameters:
+  significant_roll_amplitude: 0.0          # AC3: 静止地面
+  enable_com_observation: 0.0              # AE1: 关闭 CoM 观测 (baseline 33维)
+  enable_prediction_observation: 0.0       # AE1: 关闭预测观测
+  enable_feedforward_control: 0.0          # AE1: 关闭前馈控制

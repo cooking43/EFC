@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "experimentName": "dynamic_implicit",
+    "notes": "Implicit prediction: Pred obs only, no FF (57-dim obs)"
+  },
+  "observation": {
+    "enableCoMObservation": false,
+    "enablePredictionObservation": true,
+    "enableFeedforwardControl": false
+  },
+  "feedforward": {
+    "K_roll": 0.1,
+    "K_pitch": 0.1,
+    "max_roll_comp": 8.0,
+    "max_pitch_comp": 8.0,
+    "support_threshold": 0.7,
+    "filter_alpha": 0.3,
+    "prediction_horizon": 0.1,
+    "predictor_order": 2
+  },
+  "deckIMU": {
+    "sensorMode": "Oracle",
+    "angularVelocityNoise": 0.001,
+    "accelerationNoise": 0.01,
+    "attitudeNoise": 0.1,
+    "sensorDelay": 0.01
+  },
+  "waveSpectrum": {
+    "waveMode": "JONSWAP",
+    "significantRollAmplitudeMin": 2.0,
+    "significantRollAmplitudeMax": 5.0,
+    "significantHeaveAmplitudeMin": 0.1,
+    "significantHeaveAmplitudeMax": 0.5,
+    "peakPeriodMin": 6.0,
+    "peakPeriodMax": 14.0,
+    "gamma": 3.3,
+    "rollNaturalPeriodMin": 8.0,
+    "rollNaturalPeriodMax": 15.0,
+    "rollDampingRatioMin": 0.05,
+    "rollDampingRatioMax": 0.15,
+    "pitchNaturalPeriodMin": 5.0,
+    "pitchNaturalPeriodMax": 10.0,
+    "pitchDampingRatioMin": 0.1,
+    "pitchDampingRatioMax": 0.2,
+    "heaveNaturalPeriodMin": 4.0,
+    "heaveNaturalPeriodMax": 8.0,
+    "heaveDampingRatioMin": 0.2,
+    "heaveDampingRatioMax": 0.4,
+    "pitchScale": 0.8,
+    "numComponents": 50,
+    "omegaMin": 0.2,
+    "omegaMax": 3.0,
+    "waveSeed": -1
+  }
+}
