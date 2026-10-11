@@ -2,6 +2,7 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .matplotlib/
+.matplotlib-cache/
 analysis/.matplotlib/
 analysis/recomputed/
 new_runs/

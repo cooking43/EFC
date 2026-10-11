@@ -13,8 +13,8 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "a71e7a6789ee5901c43a3a22b3bea6a44275492496787cac9d253a7b6b4bc6a2",
-      "bytes": 176
+      "sha256": "d65797b8c8d245763b9ffe8ba8bcf7858c3199d1b8b9475139265ea2def547ab",
+      "bytes": 195
     },
     {
       "path": "analysis/paper_results/chapter_core_20261010.csv",
@@ -785,11 +785,6 @@
       "bytes": 11825
     },
     {
-      "path": "experiments/reviewer_experiments/.matplotlib-cache/fontlist-v3.11.0.json",
-      "sha256": "96c271fb03ef0cd704642f10b3f8b265a494360052fd5266b792873c5013e370",
-      "bytes": 99403
-    },
-    {
       "path": "experiments/reviewer_experiments/fair_controller_ablation.py",
       "sha256": "83556d7ca7b0639388e3fdbb49d02a1be869e711ad6cf30255becef0dc669bd4",
       "bytes": 15170
@@ -1187,13 +1182,13 @@
   },
   "release_date": "2026-10-11",
   "validation": {
-    "numerical_summaries_reproduced": true,
     "record": "validation/contract_tests.txt",
-    "numerical_absolute_tolerance": 1E-12,
-    "warnings": 3,
-    "numerical_relative_tolerance": 1E-12,
+    "quantitative_figure_pairs_regenerated": 7,
     "contract_tests_passed": 21,
     "source_csv_values_changed": false,
-    "quantitative_figure_pairs_regenerated": 7
+    "numerical_summaries_reproduced": true,
+    "warnings": 3,
+    "numerical_relative_tolerance": 1E-12,
+    "numerical_absolute_tolerance": 1E-12
   }
 }
