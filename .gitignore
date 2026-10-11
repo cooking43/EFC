@@ -87,3 +87,7 @@ __pycache__/
 
 # Backups created while installing the overlay
 .efc-backup/
+
+# Curated revised MuJoCo release: recorded CSVs, policies, and robot assets.
+# Its local .gitignore continues to exclude generated caches and new runs.
+!mujoco_revision/**

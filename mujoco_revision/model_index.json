@@ -1,0 +1,98 @@
+[
+  {
+    "checkpoint_sha256": "47978698175a7ec57700465adeeeab5b24414863530723169b407b45ab55aa37",
+    "method": "Current-State-Residual",
+    "checkpoint": "experiments/reviewer_experiments/runs/P4_current_state_residual_seed37/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_current_state_residual_seed37\\checkpoint_final.pt",
+    "train_seed": 37,
+    "training_log": "experiments/reviewer_experiments/runs/P4_current_state_residual_seed37/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "5a0e83e7ca70d99c2545a62036dd29b39625b4aac0de9ba43dc406c6ed78850e",
+    "method": "Current-State-Residual",
+    "checkpoint": "experiments/reviewer_experiments/runs/P5_current_state_residual_seed73/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P5_current_state_residual_seed73\\checkpoint_final.pt",
+    "train_seed": 73,
+    "training_log": "experiments/reviewer_experiments/runs/P5_current_state_residual_seed73/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "0b342b8045e0b3afa5334b572cad2c9951664bbd8ee1e41416a513ce658f3129",
+    "method": "Current-State-Residual",
+    "checkpoint": "experiments/reviewer_experiments/runs/P5_current_state_residual_seed109/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P5_current_state_residual_seed109\\checkpoint_final.pt",
+    "train_seed": 109,
+    "training_log": "experiments/reviewer_experiments/runs/P5_current_state_residual_seed109/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "dde499a373ef25593e51d726a4ca3ac65982ac8c70aa0ad9b87402b5aef68262",
+    "method": "Dynamic-LSTM-47",
+    "checkpoint": "experiments/reviewer_experiments/runs/P4_dynamic_lstm47_seed37_canonical/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_dynamic_lstm47_seed37_canonical\\checkpoint_final.pt",
+    "train_seed": 37,
+    "training_log": "experiments/reviewer_experiments/runs/P4_dynamic_lstm47_seed37_canonical/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "94c44dbbba202811a82d3f2d1f68e743b5a83a48ddf2c454572c6d7f6f6b0ff3",
+    "method": "Oracle-Predictive-Residual",
+    "checkpoint": "experiments/reviewer_experiments/runs/P4_oracle_predictive_residual_seed37/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_oracle_predictive_residual_seed37\\checkpoint_final.pt",
+    "train_seed": 37,
+    "training_log": "experiments/reviewer_experiments/runs/P4_oracle_predictive_residual_seed37/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "0dccab1d08c752a09d02a532188d99b1fe36b9a6609fb851c447f280fc428bc2",
+    "method": "Prediction-to-Policy",
+    "checkpoint": "experiments/reviewer_experiments/runs/P4_prediction_to_policy_seed37/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_prediction_to_policy_seed37\\checkpoint_final.pt",
+    "train_seed": 37,
+    "training_log": "experiments/reviewer_experiments/runs/P4_prediction_to_policy_seed37/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "abae4847f86ef34b46b5e2cc3c811d293b0abd780cc8bef2504ab619876f11a4",
+    "method": "Prediction-to-Policy",
+    "checkpoint": "experiments/reviewer_experiments/runs/P5_prediction_to_policy_seed73/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P5_prediction_to_policy_seed73\\checkpoint_final.pt",
+    "train_seed": 73,
+    "training_log": "experiments/reviewer_experiments/runs/P5_prediction_to_policy_seed73/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "3e4469c2335e596877b0dc06a2899282df6dccf80da8a05dc6227adf8205de9a",
+    "method": "Prediction-to-Policy",
+    "checkpoint": "experiments/reviewer_experiments/runs/P5_prediction_to_policy_seed109/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P5_prediction_to_policy_seed109\\checkpoint_final.pt",
+    "train_seed": 109,
+    "training_log": "experiments/reviewer_experiments/runs/P5_prediction_to_policy_seed109/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "d0f83c22b1345f250229748c349d6f842beec16ea66ac2f10fbbadc272228a82",
+    "method": "Predictive-Residual",
+    "checkpoint": "experiments/reviewer_experiments/runs/P4_predictive_residual_seed37/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_predictive_residual_seed37\\checkpoint_final.pt",
+    "train_seed": 37,
+    "training_log": "experiments/reviewer_experiments/runs/P4_predictive_residual_seed37/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "fbb8e15dbb0c6e1e4304ac38cf2075008a71566cb39b22cd56455d3a09603b83",
+    "method": "Predictive-Residual",
+    "checkpoint": "experiments/reviewer_experiments/runs/P5_predictive_residual_seed73/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P5_predictive_residual_seed73\\checkpoint_final.pt",
+    "train_seed": 73,
+    "training_log": "experiments/reviewer_experiments/runs/P5_predictive_residual_seed73/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "2e61506c1d113a5a8c2f32d9c070bb33565247aae5da67f1535f7666efe1339f",
+    "method": "Predictive-Residual",
+    "checkpoint": "experiments/reviewer_experiments/runs/P5_predictive_residual_seed109/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P5_predictive_residual_seed109\\checkpoint_final.pt",
+    "train_seed": 109,
+    "training_log": "experiments/reviewer_experiments/runs/P5_predictive_residual_seed109/train_updates.csv"
+  },
+  {
+    "checkpoint_sha256": "37df77b1385c1a90bb0a193a5064e748fe8c770285e14221823f07f2e2e961a1",
+    "method": "State-Enhanced-LSTM",
+    "checkpoint": "experiments/reviewer_experiments/runs/P4_state_enhanced_lstm_seed37/checkpoint_final.pt",
+    "archived_checkpoint_path": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_state_enhanced_lstm_seed37\\checkpoint_final.pt",
+    "train_seed": 37,
+    "training_log": "experiments/reviewer_experiments/runs/P4_state_enhanced_lstm_seed37/train_updates.csv"
+  }
+]

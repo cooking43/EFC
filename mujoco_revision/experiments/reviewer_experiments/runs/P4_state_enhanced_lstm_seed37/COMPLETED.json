@@ -1,0 +1,115 @@
+{
+  "method": "State-Enhanced-LSTM",
+  "train_seed": 37,
+  "global_step": 1048576,
+  "updates": 1024,
+  "episodes": 1048,
+  "observation_schema": {
+    "name": "State-Enhanced-LSTM",
+    "dimension": 65,
+    "blocks": [
+      {
+        "name": "unitree_proprioception",
+        "dimension": 47,
+        "source": "robot IMU, joint encoders, previous action, and local gait clock",
+        "causal": true
+      },
+      {
+        "name": "imu_angular_velocity_increment",
+        "dimension": 3,
+        "source": "current and previous robot IMU gyroscope",
+        "causal": true
+      },
+      {
+        "name": "gravity_vector_increment",
+        "dimension": 3,
+        "source": "current and previous robot IMU attitude/gravity vector",
+        "causal": true
+      },
+      {
+        "name": "joint_target_tracking_residual",
+        "dimension": 12,
+        "source": "joint encoders and previous commanded action",
+        "causal": true
+      }
+    ],
+    "forbidden_actor_sources": [
+      "MuJoCo contact truth",
+      "MuJoCo CoM truth",
+      "deck truth"
+    ],
+    "uses_forbidden_actor_sources": false
+  },
+  "initial_development": {
+    "success_rate": 1.0,
+    "mean_elapsed_s": 19.999999999999794,
+    "episodes": [
+      {
+        "seed": 303,
+        "elapsed_s": 19.999999999999794,
+        "return": 530.8441369265449,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 505,
+        "elapsed_s": 19.999999999999794,
+        "return": 467.4773679249531,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1101,
+        "elapsed_s": 19.999999999999794,
+        "return": 509.2705179016933,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1303,
+        "elapsed_s": 19.999999999999794,
+        "return": 486.70972604540077,
+        "success": true,
+        "fell": false
+      }
+    ]
+  },
+  "final_development": {
+    "success_rate": 1.0,
+    "mean_elapsed_s": 19.999999999999794,
+    "episodes": [
+      {
+        "seed": 303,
+        "elapsed_s": 19.999999999999794,
+        "return": 656.3845758875784,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 505,
+        "elapsed_s": 19.999999999999794,
+        "return": 607.5182558882892,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1101,
+        "elapsed_s": 19.999999999999794,
+        "return": 640.9446047723051,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1303,
+        "elapsed_s": 19.999999999999794,
+        "return": 625.5859274745734,
+        "success": true,
+        "fell": false
+      }
+    ]
+  },
+  "checkpoint": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_state_enhanced_lstm_seed37\\checkpoint_final.pt",
+  "checkpoint_sha256": "37df77b1385c1a90bb0a193a5064e748fe8c770285e14221823f07f2e2e961a1",
+  "elapsed_wall_s": 31440.3003385067,
+  "interpretation": "Engineering smoke/development result only; not a formal method comparison."
+}

@@ -1,0 +1,59 @@
+<mujoco model="Unitree H1-2 PCPPO paper visualization">
+  <!-- Visualization-only variant. Robot dynamics and the named contact deck
+       are identical to deck_scene.xml; every added scene geom is non-colliding. -->
+  <include file="h1_2_12dof_deck.xml"/>
+  <statistic center="0 0 0.85" extent="2.7"/>
+  <visual>
+    <headlight diffuse="0.78 0.80 0.82" ambient="0.30 0.32 0.35" specular="0.35 0.35 0.35"/>
+    <rgba haze="0.55 0.66 0.73 1"/>
+    <global azimuth="150" elevation="-18" offwidth="1920" offheight="1080"/>
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.28 0.40 0.50" rgb2="0.78 0.84 0.87"
+      width="512" height="3072"/>
+    <texture type="2d" name="ocean_texture" builtin="checker" rgb1="0.045 0.16 0.22"
+      rgb2="0.052 0.18 0.24" width="512" height="512"/>
+    <material name="ocean_material" texture="ocean_texture" texuniform="true" texrepeat="3 3"
+      reflectance="0.10" shininess="0.16"/>
+    <texture type="2d" name="paper_deck_texture" builtin="checker" rgb1="0.075 0.14 0.20"
+      rgb2="0.095 0.18 0.25" width="512" height="512"/>
+    <material name="paper_deck_surface" texture="paper_deck_texture" texuniform="true"
+      texrepeat="10 8" reflectance="0.12" shininess="0.18"/>
+    <material name="paper_deck_edge" rgba="0.64 0.55 0.25 1" reflectance="0.06"/>
+    <material name="paper_deck_metal" rgba="0.16 0.20 0.23 1" reflectance="0.25"/>
+    <material name="paper_pedestal" rgba="0.08 0.10 0.12 1" reflectance="0.16"/>
+  </asset>
+  <worldbody>
+    <light pos="-2 -3 6" dir="0.25 0.35 -1" directional="true"
+      diffuse="0.92 0.94 0.96" ambient="0.20 0.22 0.24" specular="0.30 0.30 0.30"/>
+    <light pos="3 2 3.5" dir="-0.5 -0.25 -1" directional="true"
+      diffuse="0.42 0.48 0.52" ambient="0.08 0.09 0.10" specular="0.18 0.18 0.18"/>
+    <geom name="paper_ocean" pos="0 0 -0.44" size="0 0 0.05" type="plane"
+      material="ocean_material" contype="0" conaffinity="0" group="2"/>
+    <geom name="paper_pedestal_column" type="cylinder" pos="0 0 -0.27" size="0.15 0.17"
+      material="paper_pedestal" contype="0" conaffinity="0" group="2"/>
+    <geom name="paper_pedestal_pivot" type="sphere" pos="0 0 -0.10" size="0.16"
+      material="paper_pedestal" contype="0" conaffinity="0" group="2"/>
+    <body name="oscillating_deck" mocap="true" pos="0 0 -0.10">
+      <geom name="oscillating_deck_geom" type="box" size="25 25 0.10"
+        material="paper_deck_surface" friction="1.0 0.005 0.0001"/>
+      <!-- Thin safety borders and tie-down points move rigidly with the deck. -->
+      <geom type="box" pos="0 24.965 0.111" size="25.0 0.025 0.006" material="paper_deck_edge"
+        density="0" contype="0" conaffinity="0" group="2"/>
+      <geom type="box" pos="0 -24.965 0.111" size="25.0 0.025 0.006" material="paper_deck_edge"
+        density="0" contype="0" conaffinity="0" group="2"/>
+      <geom type="box" pos="24.965 0 0.111" size="0.025 24.94 0.006" material="paper_deck_edge"
+        density="0" contype="0" conaffinity="0" group="2"/>
+      <geom type="box" pos="-24.965 0 0.111" size="0.025 24.94 0.006" material="paper_deck_edge"
+        density="0" contype="0" conaffinity="0" group="2"/>
+      <geom type="cylinder" pos="20 20 0.12" size="0.055 0.012" material="paper_deck_metal"
+        density="0" contype="0" conaffinity="0" group="2"/>
+      <geom type="cylinder" pos="20 -20 0.12" size="0.055 0.012" material="paper_deck_metal"
+        density="0" contype="0" conaffinity="0" group="2"/>
+      <geom type="cylinder" pos="-20 20 0.12" size="0.055 0.012" material="paper_deck_metal"
+        density="0" contype="0" conaffinity="0" group="2"/>
+      <geom type="cylinder" pos="-20 -20 0.12" size="0.055 0.012" material="paper_deck_metal"
+        density="0" contype="0" conaffinity="0" group="2"/>
+    </body>
+  </worldbody>
+</mujoco>

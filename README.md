@@ -1,5 +1,11 @@
 # EFC: Robust Humanoid Control on Dynamic Maritime Platforms
 
+## Revised MuJoCo standing study and experimental records
+
+The revised **H1-2 roll-pitch standing** implementation and its experimental records are in [`mujoco_revision/`](mujoco_revision/README.md). This includes episode-level ID/OOD and observation-sensitivity CSVs, prediction trajectories and errors, training logs, 12 frozen policies, configurations, model/hash indexes, contract tests, and a portable statistical reproduction entry point. The package reports valid 100/200 ms prediction comparisons and explicitly documents the excluded nominal 50 ms archive. See the directory's README for the paper figure/table map and verification commands.
+
+The Unity instructions below describe the original release and are retained as historical material; they are not the execution instructions for the revised MuJoCo experiments.
+
 [中文说明](README_zh-CN.md)
 
 This repository is the lightweight code release for **“EFC: Robust Humanoid Control on Dynamic Maritime Platforms via Explicit Feedforward.”** It contains the paper-specific control, environment, configuration, evaluation, and test code. Large assets that can be obtained elsewhere are deliberately excluded.

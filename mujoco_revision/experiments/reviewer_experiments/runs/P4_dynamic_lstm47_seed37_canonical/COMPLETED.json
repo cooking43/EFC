@@ -1,0 +1,82 @@
+{
+  "method": "Dynamic-LSTM-47",
+  "train_seed": 37,
+  "global_step": 1048576,
+  "updates": 1024,
+  "episodes": 1047,
+  "initial_development": {
+    "success_rate": 1.0,
+    "mean_elapsed_s": 19.999999999999794,
+    "episodes": [
+      {
+        "seed": 303,
+        "elapsed_s": 19.999999999999794,
+        "return": 645.0444702101116,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 505,
+        "elapsed_s": 19.999999999999794,
+        "return": 597.8499713644612,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1101,
+        "elapsed_s": 19.999999999999794,
+        "return": 640.441570462152,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1303,
+        "elapsed_s": 19.999999999999794,
+        "return": 613.0808049213334,
+        "success": true,
+        "fell": false
+      }
+    ]
+  },
+  "final_development": {
+    "success_rate": 1.0,
+    "mean_elapsed_s": 19.999999999999794,
+    "episodes": [
+      {
+        "seed": 303,
+        "elapsed_s": 19.999999999999794,
+        "return": 639.0456310502515,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 505,
+        "elapsed_s": 19.999999999999794,
+        "return": 613.0432518217982,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1101,
+        "elapsed_s": 19.999999999999794,
+        "return": 653.8378137347868,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1303,
+        "elapsed_s": 19.999999999999794,
+        "return": 647.3374297716216,
+        "success": true,
+        "fell": false
+      }
+    ]
+  },
+  "checkpoint": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_dynamic_lstm47_seed37_canonical\\checkpoint_final.pt",
+  "checkpoint_sha256": "dde499a373ef25593e51d726a4ca3ac65982ac8c70aa0ad9b87402b5aef68262",
+  "elapsed_wall_s": 13607.155660867691,
+  "interpretation": "Development result only; not a formal method comparison.",
+  "canonical_record": true,
+  "merged_update_rows": 1024,
+  "resume_step": 458752
+}

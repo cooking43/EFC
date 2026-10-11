@@ -1,0 +1,110 @@
+{
+  "protocol_version": "2026-09-26.1",
+  "platform": "MuJoCo H1-2 dynamic deck starter",
+  "platform_motion": {
+    "deck_size_m": [50.0, 50.0, 0.2],
+    "active_axes": ["roll", "pitch"],
+    "disabled_axes": ["surge", "sway", "heave", "yaw"],
+    "continuous_time_across_robot_resets": true,
+    "phase_sampled_once_at_simulation_initialization": true,
+    "startup_ramp_s": 1.0,
+    "additional_collidable_ground": false
+  },
+  "control_hz": 50,
+  "physics_timestep_s": 0.002,
+  "training_reward": {
+    "mode": "corrected",
+    "nominal_max_per_step": 1.0,
+    "objective": "world-upright standing with support/deck-relative height",
+    "components": [
+      "alive",
+      "world roll/pitch squared error normalized by 5 deg",
+      "support-relative pelvis-height error normalized by 0.05 m",
+      "joint-deviation penalty",
+      "action-delta penalty",
+      "base-angular-velocity penalty",
+      "bounded contact-point slip penalty",
+      "fall penalty"
+    ],
+    "audit_run": "runs/P1_final_reward_knee_audit_20260926"
+  },
+  "efc": {
+    "task": "double-support standing",
+    "predicted_variable": "platform roll",
+    "prediction_horizon_s": 0.1,
+    "mapping": "positive roll -> left_knee + / right_knee -",
+    "roll_to_knee_gain_deg_per_deg": 0.1,
+    "residual_limit_deg": 8.0,
+    "sign_audit_run": "runs/P1_final_reward_knee_audit_20260926"
+  },
+  "training": {
+    "smoke_steps": 2048,
+    "pilot_steps": 262144,
+    "formal_steps": 1048576,
+    "rollout_steps": 1024,
+    "exploratory_train_seeds": [37],
+    "formal_train_seeds_after_author_selection": [37, 73, 109],
+    "author_decision_2026_09_30": "add independent seeds 73 and 109 for Prediction-to-Policy, Current-State-Residual, and Predictive-Residual; retain seed 37 as the first independent run; train sequentially from the common initialization with the same 1048576-step budget",
+    "train_amplitude_range_deg": [0.0, 5.0],
+    "early_instability_is_not_a_rejection_criterion": true,
+    "selection_uses_only_prespecified_development_seeds": true
+  },
+  "exploratory_evaluation": {
+    "duration_s": 30.0,
+    "matched_seeds": [303, 505, 1101, 1303, 1709, 1901, 2203, 2609],
+    "purpose": "screen every corrected method before author selects formal groups",
+    "may_support_superiority_claim": false
+  },
+  "evaluation": {
+    "duration_s": 60.0,
+    "matched_seed_count": 30,
+    "matched_seeds": [
+      5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010,
+      5011, 5012, 5013, 5014, 5015, 5016, 5017, 5018, 5019, 5020,
+      5021, 5022, 5023, 5024, 5025, 5026, 5027, 5028, 5029, 5030
+    ],
+    "in_distribution_amplitudes_deg": [0.0, 1.0, 3.0, 5.0],
+    "out_of_distribution_amplitudes_deg": [7.0, 10.0],
+    "primary_metrics": [
+      "completion_rate",
+      "fall_rate",
+      "restricted_mean_survival_time_s",
+      "base_tilt_rmse_rad",
+      "contacting_foot_slip_rms_m_s",
+      "action_delta_rms"
+    ],
+    "confidence_level": 0.95,
+    "paired_comparisons": true,
+    "training_seed_scope": "three independent training seeds (37, 73, 109) for the three author-selected core methods; other comparators remain seed-37-only",
+    "binary_test": "exact paired McNemar",
+    "continuous_test": "paired sign-flip permutation",
+    "effect_sizes": ["paired risk difference", "paired standardized mean difference"]
+  },
+  "predictor": {
+    "horizons_ms": [50, 100, 200],
+    "comparators": ["persistence", "first_order", "second_order", "causal_history"],
+    "oracle_is_upper_bound_only": true
+  },
+  "sensor_stress": {
+    "latency_ms": [0, 20, 40, 80],
+    "imu_noise_levels": ["none", "nominal", "high"],
+    "bias_levels": ["none", "nominal", "high"]
+  },
+  "information_boundary": {
+    "actor_deck_truth": false,
+    "deck_truth_allowed_for_offline_labels": true,
+    "deck_truth_allowed_for_oracle_upper_bound": true
+  },
+  "raw_artifacts": [
+    "manifest.json",
+    "train_updates.csv",
+    "evaluation_episodes.csv",
+    "prediction_frames.csv",
+    "statistics.json",
+    "checkpoint.pt",
+    "COMPLETED.json or FAILED.json",
+    "training_curves.svg/png",
+    "evaluation_curves.svg/png",
+    "plot_manifest.json"
+  ]
+}

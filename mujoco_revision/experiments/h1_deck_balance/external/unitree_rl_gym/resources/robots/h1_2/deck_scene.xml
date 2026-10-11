@@ -1,0 +1,35 @@
+<mujoco model="Unitree H1-2 official policy deck validation">
+  <include file="h1_2_12dof_deck.xml"/>
+  <statistic center="0 0 1" extent="2"/>
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0.9 0.9 0.9"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="-140" elevation="-20"/>
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="flat" rgb1="0 0 0" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4"
+      rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+    <texture type="2d" name="deckchecker" builtin="checker" mark="edge" rgb1="0.03 0.08 0.18"
+      rgb2="0.08 0.20 0.42" markrgb="0.18 0.55 0.95" width="300" height="300"/>
+    <material name="deck_surface" texture="deckchecker" texuniform="true" texrepeat="8 6"
+      reflectance="0.12"/>
+    <material name="deck_pedestal" rgba="0.07 0.09 0.13 1" reflectance="0.18"/>
+  </asset>
+  <worldbody>
+    <light pos="1 0 3.5" dir="0 0 -1" directional="true"/>
+    <geom name="background_floor" pos="0 0 -0.38" size="0 0 0.05" type="plane" material="groundplane"
+      contype="0" conaffinity="0"/>
+    <!-- Visual-only pedestal: it prevents the tilted deck from visually intersecting
+         the background plane without adding support forces to the experiment. -->
+    <geom name="deck_pedestal_column" type="cylinder" pos="0 0 -0.24" size="0.12 0.14"
+      material="deck_pedestal" contype="0" conaffinity="0" group="5"/>
+    <geom name="deck_pedestal_pivot" type="sphere" pos="0 0 -0.10" size="0.13"
+      material="deck_pedestal" contype="0" conaffinity="0" group="5"/>
+    <body name="oscillating_deck" mocap="true" pos="0 0 -0.10">
+      <geom name="oscillating_deck_geom" type="box" size="25 25 0.10" material="deck_surface"
+        friction="1.0 0.005 0.0001"/>
+    </body>
+  </worldbody>
+</mujoco>

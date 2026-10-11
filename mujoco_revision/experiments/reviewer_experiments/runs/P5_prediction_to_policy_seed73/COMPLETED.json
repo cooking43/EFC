@@ -1,0 +1,79 @@
+{
+  "method": "Prediction-to-Policy",
+  "train_seed": 73,
+  "global_step": 1048576,
+  "updates": 1024,
+  "episodes": 1048,
+  "initial_development": {
+    "success_rate": 1.0,
+    "mean_elapsed_s": 29.99999999999425,
+    "episodes": [
+      {
+        "seed": 303,
+        "elapsed_s": 29.99999999999425,
+        "return": 726.4053324870735,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 505,
+        "elapsed_s": 29.99999999999425,
+        "return": 718.6613022337089,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1101,
+        "elapsed_s": 29.99999999999425,
+        "return": 692.1036331866426,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1303,
+        "elapsed_s": 29.99999999999425,
+        "return": 716.0372705458363,
+        "success": true,
+        "fell": false
+      }
+    ]
+  },
+  "final_development": {
+    "success_rate": 1.0,
+    "mean_elapsed_s": 29.99999999999425,
+    "episodes": [
+      {
+        "seed": 303,
+        "elapsed_s": 29.99999999999425,
+        "return": 993.2767234132706,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 505,
+        "elapsed_s": 29.99999999999425,
+        "return": 940.9563266909034,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1101,
+        "elapsed_s": 29.99999999999425,
+        "return": 936.6292897553944,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1303,
+        "elapsed_s": 29.99999999999425,
+        "return": 947.7744543832841,
+        "success": true,
+        "fell": false
+      }
+    ]
+  },
+  "checkpoint": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P5_prediction_to_policy_seed73\\checkpoint_final.pt",
+  "checkpoint_sha256": "abae4847f86ef34b46b5e2cc3c811d293b0abd780cc8bef2504ab619876f11a4",
+  "elapsed_wall_s": 24737.44828772545,
+  "interpretation": "Development result only; not a formal method comparison."
+}

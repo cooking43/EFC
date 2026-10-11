@@ -1,0 +1,79 @@
+{
+  "method": "Predictive-Residual",
+  "train_seed": 73,
+  "global_step": 1048576,
+  "updates": 1024,
+  "episodes": 1048,
+  "initial_development": {
+    "success_rate": 1.0,
+    "mean_elapsed_s": 29.99999999999425,
+    "episodes": [
+      {
+        "seed": 303,
+        "elapsed_s": 29.99999999999425,
+        "return": 757.1903567768255,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 505,
+        "elapsed_s": 29.99999999999425,
+        "return": 746.0360820429563,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1101,
+        "elapsed_s": 29.99999999999425,
+        "return": 728.1544617185083,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1303,
+        "elapsed_s": 29.99999999999425,
+        "return": 746.6346510538508,
+        "success": true,
+        "fell": false
+      }
+    ]
+  },
+  "final_development": {
+    "success_rate": 1.0,
+    "mean_elapsed_s": 29.99999999999425,
+    "episodes": [
+      {
+        "seed": 303,
+        "elapsed_s": 29.99999999999425,
+        "return": 1022.592486331362,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 505,
+        "elapsed_s": 29.99999999999425,
+        "return": 960.7681237257066,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1101,
+        "elapsed_s": 29.99999999999425,
+        "return": 962.2453910009024,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1303,
+        "elapsed_s": 29.99999999999425,
+        "return": 976.4035351842808,
+        "success": true,
+        "fell": false
+      }
+    ]
+  },
+  "checkpoint": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P5_predictive_residual_seed73\\checkpoint_final.pt",
+  "checkpoint_sha256": "fbb8e15dbb0c6e1e4304ac38cf2075008a71566cb39b22cd56455d3a09603b83",
+  "elapsed_wall_s": 24284.848583221436,
+  "interpretation": "Development result only; not a formal method comparison."
+}

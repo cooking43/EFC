@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.matplotlib/
+analysis/.matplotlib/
+analysis/recomputed/
+new_runs/
+.venv/
+data/runs/F3_roll_predictor_formal_30seeds/prediction_frames.csv

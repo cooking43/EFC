@@ -1,0 +1,25 @@
+EFC MuJoCo revision contract verification, 2026-10-11
+
+Command (run from mujoco_revision):
+python -B -m pytest -q -p no:cacheprovider experiments/reviewer_experiments/test_corrected_roll_pitch_platform.py experiments/reviewer_experiments/test_fair_controller_ablation.py experiments/reviewer_experiments/test_state_enhanced_lstm.py experiments/reviewer_experiments/test_roll_predictor_validation.py
+
+Result: 21 passed, 3 warnings in 22.87 s; exit code 0.
+
+The warnings are PyTorch DeprecationWarning notices about torch.jit.load in
+test_zero_initialized_prediction_inputs_preserve_base_policy (twice) and
+test_zero_initialized_expansion_is_exactly_base_equivalent (once).
+
+Environment: Python 3.13.7; PyTorch 2.12.0+cpu; MuJoCo 3.10.0;
+Matplotlib 3.11.2; pytest 9.1.1.
+
+Scope: implementation contracts for platform geometry/clock behavior,
+observation schemas, compensation structure, and actual causal predictor
+outputs. Passing these tests is not evidence of performance superiority.
+
+Independent publication checks:
+1. All 217 archived files and 12 frozen-model entries passed SHA256 checks.
+2. Gzip decompression matched the original prediction CSV byte hash.
+3. All archived numerical summaries were reproduced from the released CSVs
+   with relative and absolute tolerance 1e-12.
+4. Seven quantitative PNG/SVG figure pairs were regenerated successfully.
+5. Archived nominal 50 ms comparisons remain excluded from paper analyses.

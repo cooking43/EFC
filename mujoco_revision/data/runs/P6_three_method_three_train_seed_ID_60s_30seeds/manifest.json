@@ -1,0 +1,56 @@
+{
+  "protocol": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\formal_protocol.json",
+  "protocol_sha256": "aa52f07363b5f5621defd5d1e187bb870d7b7076b0dc4fe1947dd3b21f180e3c",
+  "conditions": [
+    "combined"
+  ],
+  "amplitudes_deg": [
+    0.0,
+    1.0,
+    3.0,
+    5.0
+  ],
+  "eval_seeds": [
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007,
+    5008,
+    5009,
+    5010,
+    5011,
+    5012,
+    5013,
+    5014,
+    5015,
+    5016,
+    5017,
+    5018,
+    5019,
+    5020,
+    5021,
+    5022,
+    5023,
+    5024,
+    5025,
+    5026,
+    5027,
+    5028,
+    5029,
+    5030
+  ],
+  "duration_s": 60.0,
+  "reward_mode": "corrected",
+  "actor_deck_truth": false,
+  "versions": {
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.22621-SP0",
+    "numpy": "2.5.0",
+    "torch": "2.12.0+cpu",
+    "gymnasium": "1.2.3",
+    "mujoco": "3.10.0"
+  }
+}

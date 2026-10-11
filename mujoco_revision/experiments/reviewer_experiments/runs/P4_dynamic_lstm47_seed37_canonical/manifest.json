@@ -1,0 +1,46 @@
+{
+  "method": "Dynamic-LSTM-47",
+  "observation_schema": "Unitree proprioception 47-D",
+  "actor_architecture": "LSTM(47,64)-MLP(64,32,12)",
+  "actor_deck_truth": false,
+  "reward_mode": "corrected",
+  "reward_audit": "runs/P1_final_reward_knee_audit_20260926",
+  "train_seed": 37,
+  "formal_evaluation_seeds_used_for_training": false,
+  "train_amplitude_range_deg": [
+    0.0,
+    5.0
+  ],
+  "amplitude_sampling": "independent uniform roll and pitch per episode",
+  "total_steps_target": 1048576,
+  "rollout_steps": 1024,
+  "episode_duration_s": 20.0,
+  "resume_checkpoint": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_dynamic_lstm47_seed37\\checkpoint_step_458752.pt",
+  "source_sha256": {
+    "train_dynamic_lstm_baseline.py": "b14d5300fd9c0a5b655e9f0d25992f2325b651682658617d5c7da0969102eaa5",
+    "formal_protocol.json": "77a83277894d0a16496628966c8c4ecb31c49df16c42e4bb524711e00b8902f3"
+  },
+  "versions": {
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.22621-SP0",
+    "numpy": "2.5.0",
+    "torch": "2.12.0+cpu",
+    "gymnasium": "1.2.3",
+    "mujoco": "3.10.0"
+  },
+  "canonical_record": true,
+  "canonicalized_from": [
+    "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_dynamic_lstm47_seed37",
+    "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_dynamic_lstm47_seed37_resume1"
+  ],
+  "resume_step": 458752,
+  "discarded_uncheckpointed_range": [
+    459776,
+    494592
+  ],
+  "segment_manifest_sha256": {
+    "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_dynamic_lstm47_seed37\\manifest.json": "eaceb429a8d1df884446a1b8a4a5932025521e4ee2fd6b0d2c3b55de664a8f79",
+    "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_dynamic_lstm47_seed37_resume1\\manifest.json": "eb273f38adff539b4685ea8d8f430fad637baf3e680fb5eeba456cb5824b01c9"
+  },
+  "merged_update_rows": 1024
+}

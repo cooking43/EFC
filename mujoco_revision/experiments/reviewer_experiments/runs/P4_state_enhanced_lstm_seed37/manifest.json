@@ -1,0 +1,71 @@
+{
+  "method": "State-Enhanced-LSTM",
+  "observation_schema": {
+    "name": "State-Enhanced-LSTM",
+    "dimension": 65,
+    "blocks": [
+      {
+        "name": "unitree_proprioception",
+        "dimension": 47,
+        "source": "robot IMU, joint encoders, previous action, and local gait clock",
+        "causal": true
+      },
+      {
+        "name": "imu_angular_velocity_increment",
+        "dimension": 3,
+        "source": "current and previous robot IMU gyroscope",
+        "causal": true
+      },
+      {
+        "name": "gravity_vector_increment",
+        "dimension": 3,
+        "source": "current and previous robot IMU attitude/gravity vector",
+        "causal": true
+      },
+      {
+        "name": "joint_target_tracking_residual",
+        "dimension": 12,
+        "source": "joint encoders and previous commanded action",
+        "causal": true
+      }
+    ],
+    "forbidden_actor_sources": [
+      "MuJoCo contact truth",
+      "MuJoCo CoM truth",
+      "deck truth"
+    ],
+    "uses_forbidden_actor_sources": false
+  },
+  "observation_dimension_from_schema": 65,
+  "actor_architecture": "LSTM(65,64)-MLP(64,32,12)",
+  "actor_deck_truth": false,
+  "actor_contact_truth": false,
+  "actor_com_truth": false,
+  "added_input_weights_zero_initialized": true,
+  "reward_mode": "corrected",
+  "train_seed": 37,
+  "reward_audit": "runs/P1_final_reward_knee_audit_20260926",
+  "formal_evaluation_seeds_used_for_training": false,
+  "train_amplitude_range_deg": [
+    0.0,
+    5.0
+  ],
+  "amplitude_sampling": "independent uniform roll and pitch per episode",
+  "total_steps_target": 1048576,
+  "rollout_steps": 1024,
+  "episode_duration_s": 20.0,
+  "resume_checkpoint": null,
+  "source_sha256": {
+    "train_state_enhanced_lstm.py": "6e709ae4b97042d7075abee4702836a886e0ec6ed5666850191539d9eb46264f",
+    "state_enhanced_lstm.py": "0aa2caa674b795a5f01ffe4e1ca52cf039a80c6ba7b883b90029128edc10b1f8",
+    "formal_protocol.json": "77a83277894d0a16496628966c8c4ecb31c49df16c42e4bb524711e00b8902f3"
+  },
+  "versions": {
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.22621-SP0",
+    "numpy": "2.5.0",
+    "torch": "2.12.0+cpu",
+    "gymnasium": "1.2.3",
+    "mujoco": "3.10.0"
+  }
+}

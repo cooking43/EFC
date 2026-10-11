@@ -1,0 +1,64 @@
+model:
+  xml_path: assets/unitree_h1_2/deck_scene.xml
+  root_body: pelvis
+  left_foot_body: left_ankle_roll_link
+  right_foot_body: right_ankle_roll_link
+deck:
+  body_name: oscillating_deck
+  length: 50.0
+  width: 50.0
+  thickness: 0.2
+  surface_height_m: 0.0
+  # Reduced from the suggested 3 deg after the ankle-roll motors saturated.
+  roll_amp_deg: 1.0
+  pitch_amp_deg: 2.0
+  heave_amp_m: 0.0
+  roll_freq_hz: 0.2
+  pitch_freq_hz: 0.15
+  heave_freq_hz: 0.0
+  roll_phase_rad: 0.0
+  pitch_phase_rad: 0.0
+  startup_ramp_s: 1.0
+sim:
+  duration: 10.0
+  timestep: null
+  headless: true
+control:
+  mode: ankle_balance
+  kp: 300.0
+  kd: 12.0
+  # Pure learned-balance mode: lower joint impedance and meaningful per-joint
+  # target ranges.  The legacy heuristic ankle/CoM torques are disabled there.
+  learned_kp: 300.0
+  learned_kd: 12.0
+  learned_action_scale_rad:
+    hip_yaw: 0.08
+    hip_pitch: 0.20
+    hip_roll: 0.18
+    knee: 0.25
+    ankle_pitch: 0.15
+    ankle_roll: 0.12
+    torso: 0.10
+    arm: 0.12
+  # Direct ankle strategy in Nm/rad and Nm/(rad/s), applied on top of joint PD.
+  pitch_torque_kp: 500.0
+  pitch_torque_kd: 80.0
+  roll_torque_kp: 400.0
+  roll_torque_kd: 60.0
+  com_torque_kp: 900.0
+  com_torque_kd: 180.0
+  # Dense RL shaping: keep the projected CoM near the feet support center.
+  com_support_reward_weight: 0.5
+  com_support_sigma_m: 0.12
+  capture_point_horizon_s: 0.15
+  # Predictive shaping is enabled only by the learned-balance + predictive-CP
+  # environment.  Legacy PPO/WBC experiments retain their original reward.
+  predictive_cp_reward_weight: 0.25
+  predictive_cp_improvement_weight: 0.10
+  predictive_cp_sigma_m: 0.10
+  predictive_cp_improvement_scale_m: 0.01
+  hip_pitch_torque_share: 0.0
+  hip_roll_torque_share: 0.0
+logging:
+  save_csv: true
+  save_plots: true

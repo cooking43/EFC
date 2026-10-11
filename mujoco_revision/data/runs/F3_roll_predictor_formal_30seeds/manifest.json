@@ -1,0 +1,62 @@
+{
+  "stage": "P3_corrected_roll_predictor_validation",
+  "predicted_variable": "platform roll",
+  "control_dt_s": 0.02,
+  "horizons_ms": [
+    50,
+    100,
+    200
+  ],
+  "methods": [
+    "Persistence",
+    "First-Order",
+    "Second-Order",
+    "Filtered-Second-Order",
+    "Causal-History",
+    "Oracle"
+  ],
+  "filtered_second_order_alpha": 0.3,
+  "causal_history_window_samples": 10,
+  "seeds": [
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007,
+    5008,
+    5009,
+    5010,
+    5011,
+    5012,
+    5013,
+    5014,
+    5015,
+    5016,
+    5017,
+    5018,
+    5019,
+    5020,
+    5021,
+    5022,
+    5023,
+    5024,
+    5025,
+    5026,
+    5027,
+    5028,
+    5029,
+    5030
+  ],
+  "amplitudes_deg": [
+    1.0,
+    3.0,
+    5.0
+  ],
+  "duration_s": 20.0,
+  "deck_tracking": "MuJoCo mocap deck; prescribed roll equals actual deck roll",
+  "controller_performance_claim_allowed": false,
+  "confidence_band_semantics": "episode-macro bootstrap 95% CI",
+  "source_sha256": "0c3b2500a28ecb7aab31a546b201d10ca0ea85d9ff51715dc797c7b92dd68ef1"
+}

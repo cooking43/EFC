@@ -1,0 +1,103 @@
+{
+  "stage": "F4_frozen_policy_sensor_stress",
+  "methods": [
+    "Dynamic-LSTM-47",
+    "Prediction-to-Policy",
+    "Current-State-Residual",
+    "Predictive-Residual"
+  ],
+  "dynamic_reference_evaluated_once": true,
+  "scenarios": [
+    {
+      "name": "clean",
+      "noise_std_deg": 0.0,
+      "bias_deg": 0.0,
+      "latency_ms": 0
+    },
+    {
+      "name": "noise_nominal",
+      "noise_std_deg": 0.1,
+      "bias_deg": 0.0,
+      "latency_ms": 0
+    },
+    {
+      "name": "noise_high",
+      "noise_std_deg": 0.5,
+      "bias_deg": 0.0,
+      "latency_ms": 0
+    },
+    {
+      "name": "bias_nominal",
+      "noise_std_deg": 0.0,
+      "bias_deg": 0.25,
+      "latency_ms": 0
+    },
+    {
+      "name": "bias_high",
+      "noise_std_deg": 0.0,
+      "bias_deg": 1.0,
+      "latency_ms": 0
+    },
+    {
+      "name": "latency_20ms",
+      "noise_std_deg": 0.0,
+      "bias_deg": 0.0,
+      "latency_ms": 20
+    },
+    {
+      "name": "latency_40ms",
+      "noise_std_deg": 0.0,
+      "bias_deg": 0.0,
+      "latency_ms": 40
+    },
+    {
+      "name": "latency_80ms",
+      "noise_std_deg": 0.0,
+      "bias_deg": 0.0,
+      "latency_ms": 80
+    }
+  ],
+  "sensor_definition": "deck-mounted roll-attitude channel at 50 Hz",
+  "noise_distribution": "independent zero-mean Gaussian angle noise per control sample",
+  "bias_definition": "constant roll-angle offset per episode",
+  "latency_definition": "causal sample delay before noise and bias",
+  "amplitude_deg": 5.0,
+  "condition": "combined",
+  "duration_s": 60.0,
+  "eval_seeds": [
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007,
+    5008,
+    5009,
+    5010,
+    5011,
+    5012,
+    5013,
+    5014,
+    5015,
+    5016,
+    5017,
+    5018,
+    5019,
+    5020,
+    5021,
+    5022,
+    5023,
+    5024,
+    5025,
+    5026,
+    5027,
+    5028,
+    5029,
+    5030
+  ],
+  "actor_deck_truth": false,
+  "truth_use": "offline prediction-error labels only",
+  "training_seed_scope": "one frozen seed-37 checkpoint per method",
+  "confidence_band_semantics": "episode-bootstrap 95% CI"
+}

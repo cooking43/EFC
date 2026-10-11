@@ -1,0 +1,79 @@
+{
+  "method": "Current-State-Residual",
+  "train_seed": 37,
+  "global_step": 1048576,
+  "updates": 1024,
+  "episodes": 1048,
+  "initial_development": {
+    "success_rate": 1.0,
+    "mean_elapsed_s": 19.999999999999794,
+    "episodes": [
+      {
+        "seed": 303,
+        "elapsed_s": 19.999999999999794,
+        "return": 548.4450103728789,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 505,
+        "elapsed_s": 19.999999999999794,
+        "return": 495.6680537577242,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1101,
+        "elapsed_s": 19.999999999999794,
+        "return": 531.5344691817858,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1303,
+        "elapsed_s": 19.999999999999794,
+        "return": 514.9633643795229,
+        "success": true,
+        "fell": false
+      }
+    ]
+  },
+  "final_development": {
+    "success_rate": 1.0,
+    "mean_elapsed_s": 19.999999999999794,
+    "episodes": [
+      {
+        "seed": 303,
+        "elapsed_s": 19.999999999999794,
+        "return": 698.9245387188193,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 505,
+        "elapsed_s": 19.999999999999794,
+        "return": 677.1847620903425,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1101,
+        "elapsed_s": 19.999999999999794,
+        "return": 699.4676913912768,
+        "success": true,
+        "fell": false
+      },
+      {
+        "seed": 1303,
+        "elapsed_s": 19.999999999999794,
+        "return": 672.43355030367,
+        "success": true,
+        "fell": false
+      }
+    ]
+  },
+  "checkpoint": "F:\\JMSE\\h1_2_dynamic_deck_starter\\experiments\\reviewer_experiments\\runs\\P4_current_state_residual_seed37\\checkpoint_final.pt",
+  "checkpoint_sha256": "47978698175a7ec57700465adeeeab5b24414863530723169b407b45ab55aa37",
+  "elapsed_wall_s": 23668.867290258408,
+  "interpretation": "Development result only; not a formal method comparison."
+}

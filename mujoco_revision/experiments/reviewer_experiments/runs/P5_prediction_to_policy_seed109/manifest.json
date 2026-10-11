@@ -1,0 +1,67 @@
+{
+  "method": "Prediction-to-Policy",
+  "observation_schema": {
+    "dimension": 48,
+    "blocks": [
+      {
+        "name": "unitree_proprioception",
+        "dimension": 47,
+        "source": "robot IMU, joint encoders, previous action, local gait clock",
+        "causal": true
+      },
+      {
+        "name": "causal_100ms_platform_roll_prediction",
+        "dimension": 1,
+        "fields": [
+          "filtered_predicted_roll_rad"
+        ],
+        "source": "platform roll sensor and second-order Taylor predictor",
+        "causal": true
+      }
+    ],
+    "actor_deck_truth": false
+  },
+  "observation_dimension_from_schema": 48,
+  "actor_architecture": "LSTM(48,64)-MLP(64,32,12)",
+  "shared_causal_prediction_for_actor": true,
+  "explicit_residual_source": "none",
+  "predictor": {
+    "input": "platform roll sensor",
+    "order": 2,
+    "horizon_s": 0.1,
+    "control_dt_s": 0.02,
+    "filter_new_weight": 0.3,
+    "velocity_difference": "three-point backward, second-order accurate",
+    "acceleration_difference": "three-point backward second difference"
+  },
+  "residual_mapping": "double support: left_knee=+clip(0.1*roll_deg); right_knee=-clip(0.1*roll_deg)",
+  "residual_limit_rad": 0.13962634015954636,
+  "roll_to_knee_gain_deg_per_deg": 0.1,
+  "knee_direction_sign": 1.0,
+  "knee_sign_audit": "runs/P1_final_reward_knee_audit_20260926",
+  "action_interface": "unchanged 12-D Unitree target offset",
+  "reward_mode": "corrected",
+  "train_seed": 109,
+  "formal_evaluation_seeds_used_for_training": false,
+  "train_amplitude_range_deg": [
+    0.0,
+    5.0
+  ],
+  "amplitude_sampling": "independent uniform roll and pitch per episode",
+  "total_steps_target": 1048576,
+  "rollout_steps": 1024,
+  "episode_duration_s": 20.0,
+  "source_sha256": {
+    "train_fair_controller_ablation.py": "11da589838dc5f54cf68231a69765157fadb3e62dfbf8da88a9d492a76afa648",
+    "fair_controller_ablation.py": "83556d7ca7b0639388e3fdbb49d02a1be869e711ad6cf30255becef0dc669bd4",
+    "formal_protocol.json": "aa52f07363b5f5621defd5d1e187bb870d7b7076b0dc4fe1947dd3b21f180e3c"
+  },
+  "versions": {
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.22621-SP0",
+    "numpy": "2.5.0",
+    "torch": "2.12.0+cpu",
+    "gymnasium": "1.2.3",
+    "mujoco": "3.10.0"
+  }
+}
